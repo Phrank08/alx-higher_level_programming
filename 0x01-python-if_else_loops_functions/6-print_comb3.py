@@ -4,4 +4,4 @@ for y in range(9):
         if y == 8 and x == 9:
             print("{:d}{:d}".format(y, x), end='')
         else:
-            printf("{:d}{:d}".format(y, x), end=', ')
+            print("{:d}{:d}".format(y, x), end=', ')
