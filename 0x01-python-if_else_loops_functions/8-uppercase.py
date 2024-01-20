@@ -4,5 +4,7 @@ def uppercase(str):
         alpha_num = ord(char)
         if 97 <= alpha_num <= 122:
             alpha_num -= 32
-            print("{}".format(ord(alpha_num)), end='')
+            print("{}".format(chr(alpha_num)), end='')
+        else:
+            print("{}".format(chr(alpha_num)), end='')
         print("")
