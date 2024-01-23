@@ -3,5 +3,5 @@ from add_0 import add
 a = 1
 b = 2
 
-add = add_0(1, 2)
+outcome = add_0.add_0(1, 2)
 print("{} + {} = {}".format(a, b, add(a, b))
