@@ -3,5 +3,6 @@
 if __name__ == "__main__":
     """print the value of a from the module variable_load_5"""
 
-    import variable_load_5 .a
+    from variable_load_5 import a
+
     print(a)
