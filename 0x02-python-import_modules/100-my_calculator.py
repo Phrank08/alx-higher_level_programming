@@ -3,7 +3,7 @@
 if __name__ == "__main__":
     """prints all the  functions from calculator_1 and handles basic operations."""
 
-    from calculator_1 import *
+    from calculator_1 import add, sub, mul, div
     import sys
 
     if len(sys.srgv) != 4:
@@ -24,3 +24,5 @@ if __name__ == "__main__":
             result = a / b
         else:
             print("Unknown operator. Available operators: +, -, * and /")
+
+    print("{} {} {} = {}".format(a, operator, b, result)
