@@ -6,23 +6,15 @@ if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
     import sys
 
-    if len(sys.srgv) != 4:
+    if len(sys.srgv) -1 != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
-        a = int(sys.argv[1])
-        operator = (sys.argv[2])
-        b = int(sys.argv[3])
+    operators = {"+": add, "-": sub, "*": mul, "/": div}
+    if sys.argv[2] not in list(operators.key()):
+        print("Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
 
-        if operator == '+':
-            result = a + b
-        elif operator == '-':
-            result = a - b
-        elif operator == '*':
-            result = a * b
-        elif operator == '/':
-            result = a / b
-        else:
-            print("Unknown operator. Available operators: +, -, * and /")
-
-    print("{} {} {} = {}".format(a, operator, b, result)
+    a = int(sys.argv[1])
+    b = int(sys.argv[3])
+    print("{} {} {} = {}".format(a, sys.argv[2], b, operators[sys.srgv[2](a, b)))
