@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 def magic_calculation(a, b):
+    """Write Python function to match Holberton School provided bytecode."""
     result = 0
     operations = ('add', 'sub')
 
