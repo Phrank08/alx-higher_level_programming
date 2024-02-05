@@ -7,5 +7,5 @@ def delete_at(my_list=[], idx=0):
     elif idx > len(my_list):
         return my_list
     else:
-        NewIndex = []
+        del NewIndex
         return NewIndex
