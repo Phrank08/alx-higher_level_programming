@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """a function that prints a matrix of integers."""
 def print_matrix_integer(matrix=[[]]):
-    if matrix is not none:
+    if matrix is not None:
         x = 0
         for horizon in matrix:
             y = 0
