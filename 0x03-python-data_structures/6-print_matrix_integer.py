@@ -6,7 +6,7 @@ def print_matrix_integer(matrix=[[]]):
         for horizon in matrix:
             y = 0
             for element in horizon:
-                print("{:d} ".format(matrix[x][y], end"")
+                print("{:d} ".format(matrix[x][y]), end="")
                 y += 1
             print()
             x += 1
