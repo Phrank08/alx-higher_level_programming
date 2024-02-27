@@ -1,4 +1,4 @@
-#usr/bin/python3
+#!usr/bin/python3
 def best_score(a_dictionay):
     if a_dictionary  == {}:
         return None
