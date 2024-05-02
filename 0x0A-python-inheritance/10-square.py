@@ -45,12 +45,8 @@ class Square(Rectangle):
     A child class of Rectangle
     """
     def __init__(self, size):
-        self.__size = size
-        Rectangle.integer_validator(self, "size", self.__size)
-
-    def area(self):
-        """
-        checks area
-        """
-        return self.__width * self__height
+        width = size
+        height = size
+        Rectangle.integer_validator(self, "size", size)
+        super().__init__(width, height)
 
