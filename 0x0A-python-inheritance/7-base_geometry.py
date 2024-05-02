@@ -18,8 +18,6 @@ class BaseGeometry:
         """
         checks for an integer
         """
-        self.name = str(name)
-        self.value = value
 
         if value not in int:
             raise TypeError("{} must be an integer".format(name))
