@@ -12,5 +12,5 @@ def append_write(filename="", text=""):
     """
 
     with open(filename, 'a', encoding='UTF-8') as myFile:
-        NumCharacters = myfile.write(text)
+        NumCharacters = myFile.write(text)
         return NumCharacters
