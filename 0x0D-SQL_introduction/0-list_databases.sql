@@ -1,0 +1,3 @@
+---this script lists all databases
+---on MySQL server
+SHOW database
