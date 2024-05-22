@@ -1,4 +1,4 @@
---- a script that creates a table in a database
+-- a script that creates a table in a database
 CREATE TABLE second_table(
 	id INT,
 	name VARCHAR(256),
