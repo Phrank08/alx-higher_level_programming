@@ -16,12 +16,12 @@ def main():
     database = MySQLdb.connect(
             host = HOST,
             port = PORT,
-            user USER,
+            user = USER,
             passwd = PASS,
-            database = DB
+            db = DB
     )
-    cur = database.connect()
-    cur.execute("SELECT id, name, FROM states ORDER BY id ASC")
+    cur = database.cursor()
+    cur.execute("SELECT id, name FROM states ORDER BY id ASC")
     rows = cur.fetchall()
     for row in rows:
         print(row)
