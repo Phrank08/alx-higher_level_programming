@@ -24,11 +24,13 @@ def main():
     )
 
     MyCur = db.cursor()
-    MyCur.execute('SELECT id, name FROM states WHERE name REGEXP "^N" ORDER BY id ASC')
+    first_query = "SELECT id, name FROM states WHERE name"
+    second_query = "LIKE BINARY 'N%' ORDER BY id ASC"
+    final_query = first_query + second_query
+    Mycur.execute(final_query)
     rows = Mycur.fetchall()
     for row in rows:
-        if row[1][0] =='N':
-            print(row)
+        print(row)
     MyCur.close()
     db.close()
 
