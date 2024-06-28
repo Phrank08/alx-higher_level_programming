@@ -3,7 +3,7 @@
 """
 
 import MySQLdb
-import sys
+from sys import argv
 
 def main():
 
