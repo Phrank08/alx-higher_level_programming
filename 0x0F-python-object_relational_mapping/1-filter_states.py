@@ -24,10 +24,11 @@ def main():
     )
 
     MyCur = db.cursor()
-    MyCur.execute("SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
-    rows = cur.fetchall()
+    MyCur.execute('SELECT id, name FROM states WHERE name REGEXP "^N" ORDER BY id ASC')
+    rows = Mycur.fetchall()
     for row in rows:
-        print(row)
+        if row[1][0] =='N':
+            print(row)
     MyCur.close()
     db.close()
 
