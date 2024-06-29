@@ -3,7 +3,7 @@
     """
 
 import MySQLdb
-from sys import argv
+import sys
 
 def main():
     """ list all values that matches the user input
