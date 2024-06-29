@@ -1,23 +1,38 @@
 #!/usr/bin/python3
-"""my module on MySQLdb"""
+"""
+Lists all states with a name starting with N (upper N) from the database
+hbtn_0e_0_usa sorted in ascending order by states.id
+"""
 import MySQLdb
 import sys
+
+
 if __name__ == "__main__":
-    args = sys.argv
-    user = args[1]
-    password = args[2]
-    database = args[3]
 
-    db = MySQLdb.connect(host='localhost', user=user,
-                         password=password, port=3306, database=database)
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    db_name = sys.argv[3]
 
-    cur = db.cursor()
-    query = """SELECT * FROM states
-            WHERE BINARY name LIKE 'N%'"""
-    cur.execute(query)
-    result = cur.fetchall()
-    for res in result:
-        print(res)
+    try:
+        conn = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=mysql_username,
+            passwd=mysql_password,
+            db=db_name,
+            charset="utf8"
+        )
+    except MySQLdb.Error as e:
+        print("Error connecting to database: {}".format(e))
+        sys.exit(1)
+
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' \
+                ORDER BY states.id ASC")
+    rows = cur.fetchall()
+
+    for row in rows:
+        print(row)
 
     cur.close()
-    db.close()
+    conn.close()
