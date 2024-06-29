@@ -1,4 +1,4 @@
-#!/usr/biin/python3
+#!/usr/bin/python3
     """ a script that takes in an argument and displays all values in the states t          able of hbtn_0e_0_usa where name matches the argument.
     """
 
