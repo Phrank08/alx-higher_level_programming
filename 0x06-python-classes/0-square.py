@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-
-"""
-This program defines an empty class Square
-"""
+"""This is a documentation for a square module
+    there is no functionality to it
+ """
 class Square:
     """
-    Thhis is a class that does nothing but defines a class
+    Description of the class Square
+
+    Attributes:
+        no attributes so far
     """
     pass
