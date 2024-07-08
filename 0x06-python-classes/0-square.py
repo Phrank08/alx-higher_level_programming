@@ -5,8 +5,5 @@
 class Square:
     """
     Description of the class Square
-
-    Attributes:
-        no attributes so far
     """
     pass
