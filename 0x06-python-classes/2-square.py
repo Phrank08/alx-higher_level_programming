@@ -1,17 +1,18 @@
 #!/usr/bin/python3
-"""Defines a class namd square with private instance"""
-
-
-
+"""This is a documentation for a square module
+    there is no functionality to it
+ """
 class Square:
-    """Contains a private instance attribute"""
-    def __init__(self, size=0):
-        """Function to initialize size"""
-        if type(size) is not int:
-            print("size must be an integer", end="")
-            raise TypeError
-        elif size < 0:
-            print("size must be >= 0", end"")
-            raise ValueError
-        else:
-            self.__size = size
+    """
+    Description of the class Square
+
+    Attributes:
+        size: The size of a square is crucial for a square, many things depend of it
+    """
+    def __init__(self, size=0) -> None:
+        self.__size = size
+
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
