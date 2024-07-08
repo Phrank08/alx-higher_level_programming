@@ -1,11 +1,8 @@
 #!/usr/bin/python3
-"""a function that deletes the item at a specific position in a list."""
 def delete_at(my_list=[], idx=0):
-    NewIndex = my_list[idx]
-    if idx < 0:
+    if idx < 0 or idx > (len(my_list) - 1):
         return my_list
-    elif idx > len(my_list):
-        return my_list
-    else:
-        del NewIndex
-        return NewIndex
+    for i, index in enumerate(my_list):
+        if i == idx:
+            my_list.remove(my_list[i])
+    return my_list
