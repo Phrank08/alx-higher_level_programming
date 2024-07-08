@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-"""
+def add_integer(a, b=99):
+    """
+    A function that adds Two integers
 
-Module to add integers
-
-"""
-
-def add_integer(a, b=98):
-    """Function that adds 2 integers"""
-
-    if a not in [int, float]:
+    Args:
+        a (int): First operand
+        b (int): Secound operand
+    """
+    if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
-    elif b not in [int, float]:
+    if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    else:
-        return int(a + b)
+    return int(a) + int(b)
