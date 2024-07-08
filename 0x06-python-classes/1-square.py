@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-"""Defines a class named square with private instance"""
-
-
+"""This is a documentation for a square module
+    there is no functionality to it
+ """
 class Square:
-    """Contains a private instance attribute"""
-    def __init___(self, size):
-        """A Function that initializes size"""
-        self.size = size
+    """
+    Description of the class Square
+
+    Attributes:
+        size: The size of a square is crucial for a square, many things depend of it
+    """
+    def __init__(self, size) -> None:
+        self.__size = size
