@@ -1,15 +1,11 @@
 #!/usr/bin/python3
-def safe_print_list(my_list, x=0):
+def safe_print_list(my_list=[], x=0):
+    listing = my_list[:x]
+    i = 0
     try:
-        count = 0
-
-        for j in range(x):
-            print(my_list[j], end="")
-            count += 1
-
-    except IndexError:
-        print("There is an IndexError")
-    finally:
-        print()
-
-        return count
+        for _ in listing:
+            i += 1
+        print("".join(map(str,listing)))
+        return i
+    except Exception as e:
+        pass
