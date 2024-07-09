@@ -1,22 +1,25 @@
 #!/usr/bin/python3
-"""my module on MySQLdb"""
-import MySQLdb
-import sys
-if __name__ == "__main__":
-    args = sys.argv
-    user = args[1]
-    password = args[2]
-    database = args[3]
+"""Lists all states from the database hbtn_0e_0_usa"""
 
-    db = MySQLdb.connect(host='localhost', user=user,
-                         password=password, port=3306, database=database)
+if __name__ == '__main__':
+    from sys import argv
+    import MySQLdb as mysql
 
-    cur = db.cursor()
-    query = """SELECT * FROM states ORDER BY id ASC"""
-    cur.execute(query)
-    result = cur.fetchall()
-    for res in result:
-        print(res)
+    try:
+        db = mysql.connect(host='localhost', port=3306, user=argv[1],
+                           passwd=argv[2], db=argv[3])
+    except Exception:
+        print('Failed to connect to the database')
+        exit(0)
 
-    cur.close()
+    cursor = db.cursor()
+
+    cursor.execute("SELECT * FROM states ORDER BY id ASC;")
+
+    result_query = cursor.fetchall()
+
+    for row in result_query:
+        print(row)
+
+    cursor.close()
     db.close()
