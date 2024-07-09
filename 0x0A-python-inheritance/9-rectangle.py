@@ -1,45 +1,20 @@
 #!/usr/bin/python3
-"""
-A module to write an empty class
-"""
-
-
-
-class BaseGeometry:
-    """Geometry class
-    """
-    def area(self, width, height):
-        """
-        check area"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """validates value
-        """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
-
-
+"""This Module is based on Based Geometry"""
+BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 class Rectangle(BaseGeometry):
-    """
-    A child class
-    """
+    """A rectangle class inherits from BaseGeometry"""
     def __init__(self, width, height):
+        """Intilizing Rectangle with width and height"""
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-        BaseGeometry.integer_validator(self, "width", self.__width)
-        BaseGeometry.integer_validator(self, "height", self.__height)
-
-    def area(self):
-        """Method to calculate area of Rectangle
-        """
-        return self.__width * self.__height
 
     def __str__(self):
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
-
-
-
+        """Returns a string reoresentatiom"""
+        return f"[Rectangle] {self.__width}/{self.__height}"
+    
+    def area(self):
+        """Returns the area of a rectangle"""
+        return self.__width * self.__height
