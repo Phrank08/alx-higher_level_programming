@@ -1,19 +1,10 @@
 #!/usr/bin/python3
-"""
-a class MyList that inherits from list
-"""
+"""A class list"""
+
 
 
 class MyList(list):
-    """
-    A class (MyList) subset of list
-    """
-
+    """A list that inherits from list"""
     def print_sorted(self):
-        """
-        A method that prints a list in asscending sort.
-        """
-
-        print(sorted(self.copy()))
-
-
+        """Returns a Sorted list"""
+        print(sorted(self))
