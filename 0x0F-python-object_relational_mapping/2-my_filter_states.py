@@ -1,27 +1,24 @@
 #!/usr/bin/python3
-"""
-This script takes in an argument and
-displays all values in the states
-where `name` matches the argument
-from the database `hbtn_0e_0_usa`.
-"""
+"""my module on MySQLdb"""
+import MySQLdb
+import sys
+if __name__ == "__main__":
+    args = sys.argv
+    user = args[1]
+    password = args[2]
+    database = args[3]
+    user_arg = args[4]
 
-import MySQLdb as db
-from sys import argv
+    db = MySQLdb.connect(host='localhost', user=user,
+                         password=password, port=3306, database=database)
 
-if __name__ == '__main__':
-    """
-    Access to the database and get the states
-    from the database.
-    """
-    db_connect = db.connect(host="localhost", port=3306,
-                            user=argv[1], passwd=argv[2], db=argv[3])
-    db_cursor = db_connect.cursor()
+    cur = db.cursor()
+    query = 'SELECT * FROM states WHERE BINARY name = "{}" ORDER BY id'.format(
+        user_arg)
+    cur.execute(query)
+    result = cur.fetchall()
+    for res in result:
+        print(res)
 
-    db_cursor.execute(
-        "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY \
-                        states.id ASC".format(argv[4]))
-    rows_selected = db_cursor.fetchall()
-
-    for row in rows_selected:
-        print(row)
+    cur.close()
+    db.close()
