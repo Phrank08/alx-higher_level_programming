@@ -2,10 +2,6 @@
 """
 A empty class BaseGeometry
 """
-
 class BaseGeometry:
-    """
-    this is an empty class
-    """
-
+    """ this is an empty class """
     pass
