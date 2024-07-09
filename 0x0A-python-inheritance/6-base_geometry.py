@@ -12,3 +12,4 @@ class BaseGeometry:
         check area
         """
         raise Exception("area() is not implemented")
+
