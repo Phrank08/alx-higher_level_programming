@@ -1,8 +1,7 @@
 #!/usr/bin/node
-const cmdLineArgv = process.argv[2];
+const { argv } = require('process');
+let len = 0;
 
-if (cmdLineArgv === undefined) {
-  console.log('No argument');
-} else {
-  console.log(cmdLineArgv);
-}
+argv.forEach(() => len++);
+
+console.log(len === 2 ? 'No argument' : argv[2]);
